@@ -7,4 +7,9 @@ public class StringTest {
         String s="abcdefgh";
         System.out.println(Util.FlipString(s));
     }
+    @Test
+    public void StringTest2(){
+        String s="aabbcadeaad";
+        System.out.println(Util.CharSum(s));
+    }
 }
