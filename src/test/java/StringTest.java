@@ -12,4 +12,10 @@ public class StringTest {
         String s="aabbcadeaad";
         System.out.println(Util.CharSum(s));
     }
+    @Test
+    public void StringTest3(){
+        String s="aabbcadeaad";
+        System.out.println(Util.MaxChar(s));
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.ksyun.whgc.chenjianghao;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Util {
@@ -24,6 +25,26 @@ public class Util {
                 Map.put(c, 1);
             }
         }
+        return Map;
+    }
+
+    public static  Map<Character,Integer> MaxChar(String  s){
+        Map<Character,Integer> Map =new HashMap<>();
+        Character Max=' ';
+        int max=0;
+        Map=CharSum(s);
+        Iterator<Map.Entry<Character,Integer>> it=Map.entrySet().iterator();
+        while (it.hasNext()){
+            Map.Entry<Character,Integer> entry=it.next();
+            if(entry.getValue()>max){
+                max= entry.getValue();
+                Max= entry.getKey();
+            }
+        }
+        Map.clear();
+        Map.put(Max,max);
+
+
         return Map;
     }
 
