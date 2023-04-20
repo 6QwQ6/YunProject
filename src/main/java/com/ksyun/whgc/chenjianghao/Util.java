@@ -48,5 +48,36 @@ public class Util {
         return Map;
     }
 
+    public static String NoRepeat(String s){
+        //滑动窗口
+        if (s == null || s.length() == 0) {
+            return null;
+        }
+        int start = 0;//滑动窗口的开始值
+        int maxlen = 0;
+        int len = 0;
+        int startMaxIndex = 0;//最长子串的开始值
+        Map<Character, Integer> map = new HashMap<>();//存储窗口内字符跟位置
+        int i;
+        for (i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            Integer value = map.get(ch);
+            if (map.containsKey(ch)) {
+                start = value + 1;
+                len = 0;
+                map.clear();
+                i=value;
+            } else {
+                map.put(ch, i);
+                len++;
+                if (len > maxlen) {
+                    maxlen = len;
+                    startMaxIndex = start;
+                }
+            }
+        }
+        return s.substring(startMaxIndex, (startMaxIndex + maxlen));
+    }
+
 
 }

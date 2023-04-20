@@ -17,5 +17,10 @@ public class StringTest {
         String s="aabbcadeaad";
         System.out.println(Util.MaxChar(s));
     }
+    @Test
+    public void StringTest4(){
+        String s="abcaefg";
+        System.out.println(Util.NoRepeat(s));
+    }
 
 }
