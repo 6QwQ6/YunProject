@@ -1,5 +1,8 @@
-import com.ksyun.whgc.chenjianghao.Util;
+package com.ksyun.whgc.chenjianghao.Question1;
+
+import com.ksyun.whgc.chenjianghao.Question1.Util;
 import org.junit.Test;
+
 
 public class StringTest {
     @Test
@@ -22,5 +25,6 @@ public class StringTest {
         String s="abcaefg";
         System.out.println(Util.NoRepeat(s));
     }
+
 
 }

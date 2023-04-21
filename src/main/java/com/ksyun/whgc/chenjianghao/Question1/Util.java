@@ -1,8 +1,6 @@
-package com.ksyun.whgc.chenjianghao;
+package com.ksyun.whgc.chenjianghao.Question1;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class Util {
     public static String  FlipString(String  s){
@@ -16,15 +14,19 @@ public class Util {
 
     public static HashMap<Character,Integer>  CharSum(String  s){
         HashMap<Character,Integer> Map=new HashMap<>();
-        for (char c : s.toCharArray()
-        ) {
-            if (Map.containsKey(c)) {
-                Integer i = Map.get(c);
-                Map.put(c, i + 1);
-            } else {
-                Map.put(c, 1);
-            }
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            Map.put(c,Map.getOrDefault(c,0)+1);
         }
+//        for (char c : s.toCharArray()
+//        ) {
+//            if (Map.containsKey(c)) {
+//                Integer i = Map.get(c);
+//                Map.put(c, i + 1);
+//            } else {
+//                Map.put(c, 1);
+//            }
+//        }
         return Map;
     }
 
