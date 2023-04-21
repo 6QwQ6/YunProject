@@ -5,7 +5,8 @@ import static java.lang.Thread.sleep;
 public class ThreadOutput {
     static Object lock = new Object();
     static int i=1;
-    public static void output()
+
+    public static void main(String[] args)
     {
 
         new Thread(()->{
@@ -54,30 +55,28 @@ public class ThreadOutput {
 
             }
         }).start();
-        new Thread(()->{
+        new Thread(()-> {
             Thread.currentThread().setName("C");
-            for(int j=0;j<5;j++) {synchronized(lock) {
-                while(true) {
-                    if(i==3) {
-                        i=1;
-                        System.out.println(Thread.currentThread().getName()+"");
-                        lock.notifyAll();
-                        break;
-                    }
-                    else {
-                        try {
-                            lock.wait();
-                        } catch (InterruptedException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
+            for (int j = 0; j < 5; j++) {
+                synchronized (lock) {
+                    while (true) {
+                        if (i == 3) {
+                            i = 1;
+                            System.out.println(Thread.currentThread().getName() + "");
+                            lock.notifyAll();
+                            break;
+                        } else {
+                            try {
+                                lock.wait();
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
                         }
                     }
                 }
-            }}
-
-
+            }
         }
-
         ).start();
 
 
