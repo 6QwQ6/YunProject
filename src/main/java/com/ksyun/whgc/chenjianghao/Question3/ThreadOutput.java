@@ -5,8 +5,7 @@ import static java.lang.Thread.sleep;
 public class ThreadOutput {
     static Object lock = new Object();
     static int i=1;
-
-    public static void main(String[] args)
+    public static void output()
     {
 
         new Thread(()->{
